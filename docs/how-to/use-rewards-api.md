@@ -1,6 +1,6 @@
 ---
 description: Use the rewards API to view validator rewards.
-sidebar_position: 13
+sidebar_position: 12
 ---
 
 import Tabs from '@theme/Tabs';
@@ -32,7 +32,7 @@ The following limitations apply:
 
 - The rewards API relies on state and block data to retrieve the reward information, meaning you'll receive limited data if the beacon node being queried is not an archive node.
 
-- You can only query blocks from finalized to head if you are in `prune` storage mode.
+- You can only query blocks from finalized to head if you are not using `archive` storage mode.
 
 ## Impact of data storage modes
 

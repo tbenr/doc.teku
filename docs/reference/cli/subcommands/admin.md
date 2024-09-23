@@ -157,7 +157,7 @@ data-storage-archive-frequency: 1028
 
 Set the frequency (in slots) at which to store finalized states to disk. The default is 2048.
 
-This option is ignored if [`--data-storage-mode`](#data-storage-mode) is set to `prune`.
+This option is ignored if [`--data-storage-mode`](#data-storage-mode) is set to `minimal`.
 
 :::note
 
@@ -200,7 +200,7 @@ data-storage-mode: "archive"
   </TabItem>
 </Tabs>
 
-Set the strategy for handling historical chain data. Valid options are `minimal`, `prune` and `archive`. The default is `prune`.
+Set the strategy for handling historical chain data. Valid options are `archive`, `minimal` and `prune`. The default is [`minimal`](#data-storage-mode).
 
 #### `data-validator-path`
 
@@ -314,7 +314,6 @@ Possible values are:
 | `mainnet` | Consensus layer | Production | Main network |
 | `minimal` | Consensus layer | Test | Used for local testing and development networks |
 | `holesky` | Consensus layer | Test | Multi-client testnet |
-| `goerli` | Consensus layer | Test | Multi-client testnet |
 | `gnosis` | Consensus layer | Production | Network for the [Gnosis chain](https://www.gnosis.io/) |
 | `sepolia` | Consensus layer | Test | Multi-client testnet |
 | `chiado` | Consensus layer | Test | Gnosis [testnet](https://docs.gnosischain.com/about/networks/chiado/) |
@@ -508,7 +507,7 @@ data-storage-mode: "archive"
   </TabItem>
 </Tabs>
 
-Set the strategy for handling historical chain data. Valid options are `minimal`, `prune` and `archive`. The default is `minimal`.
+Set the strategy for handling historical chain data. Valid options are `archive`, `minimal`, and `prune`. The default is `minimal`.
 
 #### `data-validator-path`
 
@@ -620,12 +619,11 @@ Possible values are:
 | Network | Chain | Type | Description |
 | --- | --- | --- | --- |
 | `mainnet` | Consensus layer | Production | Main network |
-| `minimal` | Consensus layer | Test | Used for local testing and development networks |
-| `goerli` | Consensus layer | Test | Multi-client testnet |
-| `gnosis` | Consensus layer | Production | Network for the [Gnosis chain](https://www.gnosis.io/) |
-| `holesky` | Consensus layer | Test | Multi-client testnet |
-| `sepolia` | Consensus layer | Test | Multi-client testnet |
-| `chiado` | Consensus layer | Test | Gnosis [testnet](https://docs.gnosischain.com/about/networks/chiado/) |
-| `lukso` | Consensus layer | Production | Network for the [Lukso chain](https://lukso.network/) |
+| `minimal` | Consensus layer | Test       | Used for local testing and development networks |
+| `gnosis`  | Consensus layer | Production | Network for the [Gnosis chain](https://www.gnosis.io/) |
+| `holesky` | Consensus layer | Test       | Multi-client testnet |
+| `sepolia` | Consensus layer | Test       | Multi-client testnet |
+| `chiado`  | Consensus layer | Test       | Gnosis [testnet](https://docs.gnosischain.com/about/networks/chiado/) |
+| `lukso`   | Consensus layer | Production | Network for the [Lukso chain](https://lukso.network/) |
 
 Predefined networks can provide defaults such the initial state of the network, bootnodes, and the address of the deposit contract.

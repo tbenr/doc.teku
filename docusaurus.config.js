@@ -64,17 +64,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // revisit this in v3 of docusaurus that is due to go GA
       // algolia: {
       //   // The application ID provided by Algolia
       //   appId: "NSRFPEJ4NC",
       //   // Public API key: it is safe to commit it
       //   apiKey: "cea41b975ad6c9a01408dfda6e0061d3",
       //   indexName: "teku",
-      //   // Optional: see doc section below
+      //   // ensures that search results are relevant to the current language and version.
       //   contextualSearch: true,
       //   // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //   externalUrlRegex: "external\\.com|domain\\.com",
+      //   // externalUrlRegex: "external\\.com|domain\\.com",
       //   // Optional: Algolia search parameters
       //   searchParameters: {},
       //   // Optional: path for search page that enabled by default (`false` to disable it)
@@ -137,6 +136,11 @@ const config = {
             dropdownActiveClassDisabled: true,
           },
           {
+            href: "/chatbot",
+            className: "header-chatbot-link",
+            position: "right",
+          },          
+          {
             href: "https://github.com/ConsenSys/teku",
             className: "header-github-link",
             position: "right",
@@ -144,6 +148,11 @@ const config = {
           {
             href: "https://discord.com/invite/consensys",
             className: "header-discord-link",
+            position: "right",
+          },
+          {
+            href: "https://x.com/Teku_Consensys",
+            className: "header-twitter-link",
             position: "right",
           },
         ],
@@ -199,6 +208,10 @@ const config = {
               {
                 label: "Teku documentation GitHub",
                 href: "https://github.com/ConsenSys/doc.teku",
+              },
+              {
+                label: "Subscribe to Teku releases",
+                href: "https://share.hsforms.com/1bkXI6uLpSROGBRVig4KeIQ2urwb",
               },
             ],
           },
@@ -359,8 +372,8 @@ const config = {
             to: "/how-to/update-withdrawal-keys",
           },
           {
-            from: "/HowTo/Doppelganger-Detection",
-            to: "/how-to/enable-doppelganger-detection",
+            from: ["/HowTo/Doppelganger-Detection", "/how-to/enable-doppelganger-detection"],
+            to: "/development/how-to/prevent-slashing/detect-doppelgangers",
           },
           {
             from: "/HowTo/Migrate-Database",
@@ -418,6 +431,10 @@ const config = {
             from: "/category/tutorials",
             to: "/tutorials",
           },
+          {
+            from: "/concepts/merge",
+            to: "/concepts",
+          },
         ],
       },
     ],
@@ -425,12 +442,11 @@ const config = {
   themes: [
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      ({
-        hashed: true,
+      {
         docsRouteBasePath: "/",
+        hashed: true,
         indexBlog: false,
-      }),
+      },
     ],
   ],
 };

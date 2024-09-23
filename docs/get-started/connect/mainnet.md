@@ -8,15 +8,15 @@ sidebar_position: 1
 
 :::info
 
-[The Merge](../../concepts/merge.md) was executed on **September 15, 2022**.
-
-Ethereum is now a [proof of stake](../../concepts/proof-of-stake.md) network, and a full Ethereum node requires both [an execution client and a consensus client](../../concepts/merge.md#execution-and-consensus-clients).
+Ethereum is a [proof-of-stake](../../concepts/proof-of-stake.md) network, and a full Ethereum node requires
+both [an execution client and a consensus client](../../concepts/node-types.md#execution-and-consensus-clients).
 
 :::
 
 Run Teku as a consensus client with any execution client on Ethereum Mainnet.
 
-If you're using [Hyperledger Besu](https://besu.hyperledger.org/en/stable/) as an execution client, you can follow the [Besu and Teku Mainnet tutorial](https://besu.hyperledger.org/en/latest/public-networks/tutorials/besu-teku-mainnet/).
+If you're using [Besu](https://besu.hyperledger.org/en/stable/) as an execution client, you can
+follow the [Besu and Teku Mainnet tutorial](https://besu.hyperledger.org/en/latest/public-networks/tutorials/besu-teku-mainnet/).
 
 ## Prerequisites
 
@@ -50,7 +50,8 @@ need them to [create the validator password files](#create-a-password-file-for-e
 
 For each validator key, create a text file containing the password to decrypt the key.
 
-Teku allows you to specify individual keys and passwords in the command line, or you can specify directories from which to load keys and passwords. If specifying directories, password files must have the same name as the keys, but use the `.txt` extension.
+Teku allows you to specify individual keys and passwords in the command line, or you can specify directories from which to load keys and passwords.
+If specifying directories, password files must have the same name as the keys, but use the `.txt` extension.
 
 :::info
 
@@ -105,7 +106,8 @@ You can modify the option values and add other [command line options](../../refe
 
 You can run the Teku beacon node and validator client as a [single process](#single-process) or as [separate processes](#separate-processes).
 
-You can check your validator status by searching your Ethereum address on the [Beacon Chain explorer](https://beaconcha.in/). It may take up to multiple days for your validator to be activated and start proposing blocks.
+You can check your validator status by searching your Ethereum address on the [Beacon Chain explorer](https://beaconcha.in/).
+Your validator might take up to multiple days to activate and start proposing blocks.
 
 You can also use [Prometheus and Grafana](../../how-to/monitor/use-metrics.md) to monitor your nodes.
 
@@ -130,7 +132,9 @@ Specify:
 - The URL of a checkpoint sync endpoint using the
   [`--checkpoint-sync-url`](../../reference/cli/index.md#checkpoint-sync-url) option.
 - An Ethereum address you own as the default fee recipient using the [`--validators-proposer-default-fee-recipient`](../../reference/cli/index.md#validators-proposer-default-fee-recipient) option.
-- The paths to the keystore `.json` file and password `.txt` file created in [step 2](#create-a-password-file-for-each-validator-key) for each validator using the [`--validator-keys`](../../reference/cli/index.md#validator-keys) option. Separate the `.json` and `.txt` files with a colon, and separate entries for multiple validators with commas. Alternatively, specify paths to directories to load multiple keys and passwords from.
+- The paths to the keystore `.json` file and password `.txt` file created in [step 2](#create-a-password-file-for-each-validator-key) for each validator using the [`--validator-keys`](../../reference/cli/index.md#validator-keys) option.
+Separate the `.json` and `.txt` files with a colon, and separate entries for multiple validators with commas.
+Alternatively, specify paths to directories to load multiple keys and passwords from.
 
 Also, in the command:
 
@@ -155,7 +159,9 @@ teku validator-client \
 Specify:
 
 - The location of one or more beacon node API endpoints using the [`--beacon-node-api-endpoint`](../../reference/cli/subcommands/validator-client.md#beacon-node-api-endpoint-beacon-node-api-endpoints) option.
-- The paths to the keystore `.json` file and password `.txt` file created in [step 2](#create-a-password-file-for-each-validator-key) for each validator using the [`--validator-keys`](../../reference/cli/index.md#validator-keys) option. Separate the `.json` and `.txt` files with a colon, and separate entries for multiple validators with commas. Alternatively, specify paths to directories to load multiple keys and passwords from.
+- The paths to the keystore `.json` file and password `.txt` file created in [step 2](#create-a-password-file-for-each-validator-key) for each validator using the [`--validator-keys`](../../reference/cli/index.md#validator-keys) option. 
+Separate the `.json` and `.txt` files with a colon, and separate entries for multiple validators with commas. 
+Alternatively, specify paths to directories to load multiple keys and passwords from.
 
 ## 5. Wait for the clients to sync
 

@@ -100,6 +100,8 @@ csvg
 customizability
 dabit
 daishi
+dencun
+danksharding
 datadir
 datagit
 datas
@@ -370,7 +372,7 @@ nprogress
 ntfs
 nuxt
 nwgi
-offences
+offenses
 omitempty
 onboarded
 openapi
@@ -492,6 +494,7 @@ revertreason
 rmiz
 roadmap
 rocketvalidator
+rollups
 rootca
 rpcapi
 rpcprefix
@@ -566,6 +569,8 @@ templating
 temurin
 thanos
 therox
+timesync
+TKBU
 tmpdir
 toolset
 toplevel
@@ -639,6 +644,7 @@ xclip
 xdoppelganger
 xirzc
 xplorer
+Xshut
 xsoar
 yacop
 yangshun
